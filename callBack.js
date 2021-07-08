@@ -25,29 +25,35 @@ takeOrder("customer1", (customer)=>{
 })
 
 
+takeOrder("customer2", (customer)=>{
+    processOrder(customer, (customer)=>{
+        completeOrder(customer);
+    })
+})
 
 
 
 
-function takeOrder(customer){
-    console.log(`take order for ${customer}`);
-    processOrder(customer);
-}
 
-function processOrder(customer){
-    console.log(`processing order for ${customer}`);
+// function takeOrder(customer){
+//     console.log(`take order for ${customer}`);
+//     processOrder(customer);
+// }
 
-    setTimeout(()=>{
-        console.log(`cooking completed`);
-        console.log(`order processed for ${customer}`);
-        completeOrder(customer)
-    },5000);
-}
+// function processOrder(customer){
+//     console.log(`processing order for ${customer}`);
 
-function completeOrder(customer){
-    console.log(`completed order for ${customer}`);
-}
+//     setTimeout(()=>{
+//         console.log(`cooking completed`);
+//         console.log(`order processed for ${customer}`);
+//         completeOrder(customer)
+//     },5000);
+// }
 
-takeOrder("customer1");
+// function completeOrder(customer){
+//     console.log(`completed order for ${customer}`);
+// }
 
-takeOrder("customer2");
+// takeOrder("customer1");
+
+// takeOrder("customer2");
